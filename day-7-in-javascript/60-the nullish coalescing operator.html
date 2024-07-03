@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+        const openingHours = {
+          [weekdays[3]]: {
+            open: 12,
+            close: 22,
+          },
+          [weekdays[4]]: {
+            open: 11,
+            close: 23,
+          },
+          [weekdays[5]]: {
+            open: 0, // Open 24 hours
+            close: 24,
+          },
+        };
+  
+        const restaurant = {
+          name: "Classico Italiano",
+          location: "Via Angelo Tavanti 23, Firenze, Italy",
+          categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+          starterMenu: [
+            "Focaccia",
+            "Bruschetta",
+            "Garlic Bread",
+            "Caprese Salad",
+          ],
+          mainMenu: ["Pizza", "Pasta", "Risotto"],}
+      // The Nullish Coalescing Operator
+      restaurant.numGuests = 0;
+      const guests = restaurant.numGuests || 10;
+      console.log(guests);
+
+      // Nullish: null and undefined (NOT 0 or '')
+      const guestCorrect = restaurant.numGuests ?? 10;
+      console.log(guestCorrect);
+    </script>
+  </body>
+</html>

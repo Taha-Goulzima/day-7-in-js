@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const restaurant = {
+        name: "the 8 pool restaurant",
+        location: "rabat rue hassan II 25, morocco",
+        categories: [
+          "italain",
+          "arabic kitchen",
+          "morrocan kitchen",
+          "organic",
+        ],
+        startMenu: [
+          "Zaalouk",
+          "Moroccan saled",
+          "Garlic bread",
+          "Cesar saled",
+          "Briwat",
+        ],
+        mainMenu: [
+          "Harira Soup",
+          "Chicken Tagine with Preserved Lemons and Olives",
+          "Lamb Tagine with Prunes and Almonds",
+          "Vegetable Couscous",
+          "atbout",
+          "Moroccan Mint Tea",
+        ],
+        order: function (starterIndex, mainIndex) {
+          return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+      };
+
+      const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const a = arr[0];
+      const b = arr[1];
+      const c = arr[2];
+      const d = arr[3];
+      const e = arr[4];
+      const f = arr[5];
+      const g = arr[6];
+      const h = arr[7];
+      const i = arr[8];
+      const j = arr[9];
+
+      const [x, y, z, m] = arr;
+      console.log(x, y, z, m);
+      console.log(arr);
+
+      const [first, , , second] = restaurant.categories;
+      console.log(first, second);
+
+      let [main, , secondary] = restaurant.categories;
+      console.log(main, secondary);
+      //switching variables
+      const temp = main;
+      main = secondary;
+      secondary = temp;
+      console.log(main, secondary);
+      // another way of switching variables
+      [main, secondary] = [secondary, main];
+      console.log(main, secondary);
+
+      const [starter, mainCourse] = restaurant.order(2, 0);
+      console.log(starter, mainCourse);
+    </script>
+  </body>
+</html>

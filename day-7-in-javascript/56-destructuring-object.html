@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const restaurant = {
+        name: "the 8 pool restaurant",
+        location: "rabat rue hassan II 25, morocco",
+        categories: [
+          "italain",
+          "arabic kitchen",
+          "morrocan kitchen",
+          "organic",
+        ],
+        startMenu: [
+          "Zaalouk",
+          "Moroccan saled",
+          "Garlic bread",
+          "Cesar saled",
+          "Briwat",
+        ],
+        mainMenu: [
+          "Harira Soup",
+          "Chicken Tagine with Preserved Lemons and Olives",
+          "Lamb Tagine with Prunes and Almonds",
+          "Vegetable Couscous",
+          "atbout",
+          "Moroccan Mint Tea",
+        ],
+        openingHours: {
+          thu: {
+            open: 17,
+            close: 22,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0,
+            close: 24,
+          },
+          sun: {
+            open: 11,
+            close: 23,
+          },
+        },
+
+        order: function (starterIndex, mainIndex) {
+          return [this.startMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderDelivery: function ({starterIndex =1, mainIndex=0, time="22.30", address}) {
+          console.log(
+            `order receved ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at the time ${time}`
+          );
+        },
+      };
+
+      restaurant.orderDelivery({
+        time: "22:30",
+        address: "hay riyad 145",
+        mainIndex: 2,
+        starterIndex: 2,
+      });
+      restaurant.orderDelivery({
+        address:'hay riyad 145',
+        starterIndex: 1,
+      })
+      const { name, openingHours, categories } = restaurant;
+      console.log(name, openingHours, categories);
+
+      const {
+        name: restaurantName,
+        openingHours: hours,
+        categories: tags,
+      } = restaurant;
+      console.log(restaurantName, hours, tags);
+
+      const { startMenu: starter = [] } = restaurant;
+      console.log(starter);
+
+      const {
+        fri: { open, close },
+      } = openingHours;
+      console.log(open, close);
+    </script>
+  </body>
+</html>
